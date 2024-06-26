@@ -1,0 +1,213 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="master.master.cs" Inherits="web_based_astrology_web_site.master" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Astroloji Sitesi</title>
+    <style>
+        /* Stil tanımlamaları burada */
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+        }
+        body {
+            background-image: url('<%= ResolveUrl("~/images/background.jpg") %>');
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center center; 
+            background-attachment: fixed; 
+        }
+        .header {
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 20px;
+            display: flex; 
+            align-items: center;
+        }
+        .header img {
+            height: 80px; 
+            margin-right: 20px; 
+        }
+
+        .header h1 {
+            color: rgba(0, 0, 0, 0.5); 
+            font-size: 50px; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center; /* Elemanları dikeyde ortalar */
+        }
+
+        .nav-links a, .dropdown a {
+            background: rgba(255, 255, 255, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, border 0.3s ease;
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+        }
+
+        .nav-links a:hover, .dropdown-content a:hover {
+            background: rgba(255, 255, 255, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+            height: calc(100% - 40px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .transparent-panel {
+            background-color: rgba(255, 255, 255, 0.5); 
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            width: 1100px; 
+            margin: 0 auto;
+            max-height: 600px; /* Örnek: Panelin maksimum yüksekliği */
+            overflow-y: auto; /* Yatay kaydırmayı gizle */
+        }
+        form {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .panel-with-image {
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .header-with-image {
+            display: flex;
+            align-items: center;
+        }
+        .header img {
+            height: 80px; 
+            margin-right: 20px; 
+        }
+        .header-with-image h2 {
+            color: rgba(0, 0, 0, 0.9); 
+            font-size: 50px; 
+            font-weight: bold; 
+            text-transform: uppercase; 
+        }
+        .panel-content {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .buttons-container {
+            position: absolute;
+            top: -40px; 
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+        }
+        .buttons-container .button {
+            background: rgba(255, 255, 255, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.2); 
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease, border 0.3s ease;
+        }
+        .buttons-container .button:hover {
+            background: rgba(255, 255, 255, 0.5); 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+        .header-with-image h2 {
+            margin: 0;
+            color: #28095b;
+            font-size: 42px; /* Metin boyutunu belirtin */
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="header">
+            <div class="logo-title">
+                <img src='<%= ResolveUrl("~/images/amblem.png") %>' alt="Amblem" />
+            </div>
+            <div class="nav-links">
+                <a href="<%= ResolveUrl("~/Main.aspx") %>">Ana Sayfa</a>
+                <div class="dropdown">
+                    <a href="#">Burçlar</a>
+                    <div class="dropdown-content">
+                        <a href="<%= ResolveUrl("~/koc.aspx") %>">Koç</a>
+                        <a href="<%= ResolveUrl("~/boga.aspx") %>">Boğa</a>
+                        <a href="<%= ResolveUrl("~/ikizler.aspx") %>">İkizler</a>
+                        <a href="<%= ResolveUrl("~/yengec.aspx") %>">Yengeç</a>
+                        <a href="<%= ResolveUrl("~/aslan.aspx") %>">Aslan</a>
+                        <a href="<%= ResolveUrl("~/basak.aspx") %>">Başak</a>
+                        <a href="<%= ResolveUrl("~/terazi.aspx") %>">Terazi</a>
+                        <a href="<%= ResolveUrl("~/akrep.aspx") %>">Akrep</a>
+                        <a href="<%= ResolveUrl("~/yay.aspx") %>">Yay</a>
+                        <a href="<%= ResolveUrl("~/Oglak.aspx") %>">Oğlak</a>
+                        <a href="<%= ResolveUrl("~/Kova.aspx") %>">Kova</a>
+                        <a href="<%= ResolveUrl("~/Balik.aspx") %>">Balık</a>
+                    </div>
+                </div>
+                <a href="<%= ResolveUrl("~/YukselenBurc.aspx") %>">Yükselen Burç</a>
+                <a href="<%= ResolveUrl("~/AlcalanBurc.aspx") %>">Alçalan Burç</a>
+                <a href="<%= ResolveUrl("~/default.aspx") %>">Tarot Falı</a>
+                <a href="<%= ResolveUrl("~/default2.aspx") %>">Hakkımızda</a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="transparent-panel">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    <!-- İçeriği burada gösterebilirsiniz -->
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
