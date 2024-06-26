@@ -60,3 +60,5 @@ D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\obj\De
 D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\bin\HtmlAgilityPack.dll
 D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\bin\HtmlAgilityPack.pdb
 D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\bin\HtmlAgilityPack.xml
+D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\bin\Newtonsoft.Json.dll
+D:\WebBasedTech\web_based_astrology_web_site\web_based_astrology_web_site\bin\Newtonsoft.Json.xml

@@ -47,6 +47,9 @@
       <HintPath>..\packages\HtmlAgilityPack.1.11.61\lib\Net45\HtmlAgilityPack.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -70,14 +73,95 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="About.aspx" />
     <Content Include="akrep.aspx" />
     <Content Include="AlcalanBurc.aspx" />
     <Content Include="App_Data\genel_ozellikler.accdb" />
+    <Content Include="App_Data\genel_ozellikler.mdb" />
     <Content Include="App_Data\HoroscopeDatabase.accdb" />
+    <Content Include="App_Data\HoroscopeDatabase.mdb" />
     <Content Include="aslan.aspx" />
     <Content Include="balik.aspx" />
     <Content Include="basak.aspx" />
     <Content Include="Boga.aspx" />
+    <Content Include="cards\c01.jpg" />
+    <Content Include="cards\c02.jpg" />
+    <Content Include="cards\c03.jpg" />
+    <Content Include="cards\c04.jpg" />
+    <Content Include="cards\c05.jpg" />
+    <Content Include="cards\c06.jpg" />
+    <Content Include="cards\c07.jpg" />
+    <Content Include="cards\c08.jpg" />
+    <Content Include="cards\c09.jpg" />
+    <Content Include="cards\c10.jpg" />
+    <Content Include="cards\c11.jpg" />
+    <Content Include="cards\c12.jpg" />
+    <Content Include="cards\c13.jpg" />
+    <Content Include="cards\c14.jpg" />
+    <Content Include="cards\m00.jpg" />
+    <Content Include="cards\m01.jpg" />
+    <Content Include="cards\m02.jpg" />
+    <Content Include="cards\m03.jpg" />
+    <Content Include="cards\m04.jpg" />
+    <Content Include="cards\m05.jpg" />
+    <Content Include="cards\m06.jpg" />
+    <Content Include="cards\m07.jpg" />
+    <Content Include="cards\m08.jpg" />
+    <Content Include="cards\m09.jpg" />
+    <Content Include="cards\m10.jpg" />
+    <Content Include="cards\m11.jpg" />
+    <Content Include="cards\m12.jpg" />
+    <Content Include="cards\m13.jpg" />
+    <Content Include="cards\m14.jpg" />
+    <Content Include="cards\m15.jpg" />
+    <Content Include="cards\m16.jpg" />
+    <Content Include="cards\m17.jpg" />
+    <Content Include="cards\m18.jpg" />
+    <Content Include="cards\m19.jpg" />
+    <Content Include="cards\m20.jpg" />
+    <Content Include="cards\m21.jpg" />
+    <Content Include="cards\p01.jpg" />
+    <Content Include="cards\p02.jpg" />
+    <Content Include="cards\p03.jpg" />
+    <Content Include="cards\p04.jpg" />
+    <Content Include="cards\p05.jpg" />
+    <Content Include="cards\p06.jpg" />
+    <Content Include="cards\p07.jpg" />
+    <Content Include="cards\p08.jpg" />
+    <Content Include="cards\p09.jpg" />
+    <Content Include="cards\p10.jpg" />
+    <Content Include="cards\p11.jpg" />
+    <Content Include="cards\p12.jpg" />
+    <Content Include="cards\p13.jpg" />
+    <Content Include="cards\p14.jpg" />
+    <Content Include="cards\s01.jpg" />
+    <Content Include="cards\s02.jpg" />
+    <Content Include="cards\s03.jpg" />
+    <Content Include="cards\s04.jpg" />
+    <Content Include="cards\s05.jpg" />
+    <Content Include="cards\s06.jpg" />
+    <Content Include="cards\s07.jpg" />
+    <Content Include="cards\s08.jpg" />
+    <Content Include="cards\s09.jpg" />
+    <Content Include="cards\s10.jpg" />
+    <Content Include="cards\s11.jpg" />
+    <Content Include="cards\s12.jpg" />
+    <Content Include="cards\s13.jpg" />
+    <Content Include="cards\s14.jpg" />
+    <Content Include="cards\w01.jpg" />
+    <Content Include="cards\w02.jpg" />
+    <Content Include="cards\w03.jpg" />
+    <Content Include="cards\w04.jpg" />
+    <Content Include="cards\w05.jpg" />
+    <Content Include="cards\w06.jpg" />
+    <Content Include="cards\w07.jpg" />
+    <Content Include="cards\w08.jpg" />
+    <Content Include="cards\w09.jpg" />
+    <Content Include="cards\w10.jpg" />
+    <Content Include="cards\w11.jpg" />
+    <Content Include="cards\w12.jpg" />
+    <Content Include="cards\w13.jpg" />
+    <Content Include="cards\w14.jpg" />
     <Content Include="ikizler.aspx" />
     <Content Include="images\akrep.PNG" />
     <Content Include="images\akrep_detail.PNG" />
@@ -101,6 +185,7 @@
     <Content Include="images\kova_detail.PNG" />
     <Content Include="images\oglak.PNG" />
     <Content Include="images\oglak_detail.PNG" />
+    <Content Include="images\purple_heart.png" />
     <Content Include="images\terazi.PNG" />
     <Content Include="images\terazi_detail.PNG" />
     <Content Include="images\yay.PNG" />
@@ -109,9 +194,11 @@
     <Content Include="images\yengec_detail.PNG" />
     <Content Include="Koc.aspx" />
     <Content Include="kova.aspx" />
+    <Content Include="LoveCompatibility.aspx" />
     <Content Include="Main.aspx" />
     <Content Include="oglak.aspx" />
     <Content Include="RSSParsing.aspx" />
+    <Content Include="Tarot.aspx" />
     <Content Include="terazi.aspx" />
     <Content Include="Web.config" />
     <Content Include="yay.aspx" />
@@ -119,6 +206,13 @@
     <Content Include="YukselenBurc.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
     <Compile Include="akrep.aspx.cs">
       <DependentUpon>akrep.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -182,6 +276,13 @@
     <Compile Include="kova.aspx.designer.cs">
       <DependentUpon>kova.aspx</DependentUpon>
     </Compile>
+    <Compile Include="LoveCompatibility.aspx.cs">
+      <DependentUpon>LoveCompatibility.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoveCompatibility.aspx.designer.cs">
+      <DependentUpon>LoveCompatibility.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -210,6 +311,13 @@
     </Compile>
     <Compile Include="RSSParsing.aspx.designer.cs">
       <DependentUpon>RSSParsing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tarot.aspx.cs">
+      <DependentUpon>Tarot.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tarot.aspx.designer.cs">
+      <DependentUpon>Tarot.aspx</DependentUpon>
     </Compile>
     <Compile Include="terazi.aspx.cs">
       <DependentUpon>terazi.aspx</DependentUpon>
@@ -242,6 +350,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="master.Master" />
+    <Content Include="App_Data\tarot-images.json" />
+    <Content Include="model.pkl" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
