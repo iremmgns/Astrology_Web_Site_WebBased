@@ -197,8 +197,9 @@
                 </div>
                 <a href="<%= ResolveUrl("~/YukselenBurc.aspx") %>">Yükselen Burç</a>
                 <a href="<%= ResolveUrl("~/AlcalanBurc.aspx") %>">Alçalan Burç</a>
-                <a href="<%= ResolveUrl("~/default.aspx") %>">Tarot Falı</a>
-                <a href="<%= ResolveUrl("~/default2.aspx") %>">Hakkımızda</a>
+                <a href="<%= ResolveUrl("~/Tarot.aspx") %>">Tarot Falı</a>
+                <a href="<%= ResolveUrl("~/LoveCompatibility.aspx") %>">Aşk Uyumu</a>
+                <a href="<%= ResolveUrl("~/About.aspx") %>">Hakkımızda</a>
             </div>
         </div>
         <div class="content">
